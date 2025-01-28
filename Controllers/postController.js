@@ -3,6 +3,7 @@ const Recipe = require("../Models/recipeModel")
 exports.addRecipe = async (req,res) => {
     const {title,category,ingredients,steps,username,profile} =req.body
     const postImage = req.file.filename
+    console.log('Uploaded file metadata:', req.file);
     const {userId} = req.payload
     try {
         if(!postImage || !title || !category || !ingredients || !steps){
