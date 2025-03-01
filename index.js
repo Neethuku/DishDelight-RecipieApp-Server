@@ -3,13 +3,11 @@ const express= require('express')
 const cors = require('cors')
 require('./DB/Connection')
 const router = require('./Routes/Routes')
-const path = require('path');
  
 const BlogServer = express()
 BlogServer.use(cors())
 BlogServer.use(express.json())
 BlogServer.use(router)
-// BlogServer.use('/uploads',express.static(path.join(__dirname,'./uploads')))
 BlogServer.use('/uploads',express.static('./uploads'))
 
 
